@@ -26,7 +26,12 @@ export default function ChatProvider({ children }: PropsWithChildren) {
 		};
 
 		connect();
-	});
+
+		return () => {
+			client.disconnectUser();
+			setIsReady(false);
+		};
+	}, []);
 
 	if (!isReady) {
 		return <ActivityIndicator />;
