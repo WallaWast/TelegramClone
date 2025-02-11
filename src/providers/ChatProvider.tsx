@@ -24,7 +24,7 @@ export default function ChatProvider({ children }: PropsWithChildren) {
 				{
 					id: profile.username,
 					name: profile.full_name,
-					image: 'https://i.imgur.com/LU66pxz.jpeg',
+					image: supabase.storage.from('avatars').getPublicUrl(profile.avatar_url).data.publicUrl,
 				},
 				//tokenProvider
 				client.devToken(profile.username)
