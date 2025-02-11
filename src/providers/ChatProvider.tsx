@@ -22,13 +22,18 @@ export default function ChatProvider({ children }: PropsWithChildren) {
 		const connect = async () => {
 			await client.connectUser(
 				{
-					id: profile.username,
+					id: profile.id,
 					name: profile.full_name,
 					image: supabase.storage.from('avatars').getPublicUrl(profile.avatar_url).data.publicUrl,
 				},
 				//tokenProvider
-				client.devToken(profile.username)
+				client.devToken(profile.id)
 			);
+
+			// const channel = client.channel('messaging', 'the_park', {
+			// 	name: 'The Park',
+			// });
+			// await channel.watch();
 			setIsReady(true);
 		};
 

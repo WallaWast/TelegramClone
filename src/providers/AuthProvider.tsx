@@ -42,7 +42,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
 		fetchProfile();
 	}, [session?.user]);
 
-	console.log(profile);
+	//console.log(profile);
 
 	return (
 		<AuthContext.Provider
