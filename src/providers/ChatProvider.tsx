@@ -29,11 +29,6 @@ export default function ChatProvider({ children }: PropsWithChildren) {
 				//tokenProvider
 				client.devToken(profile.id)
 			);
-
-			// const channel = client.channel('messaging', 'the_park', {
-			// 	name: 'The Park',
-			// });
-			// await channel.watch();
 			setIsReady(true);
 		};
 
