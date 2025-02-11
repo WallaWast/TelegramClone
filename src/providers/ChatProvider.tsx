@@ -17,7 +17,7 @@ export default function ChatProvider({ children }: PropsWithChildren) {
 			return;
 		}
 
-		//tokenProvider().then(console.log);
+		tokenProvider().then(console.log);
 
 		const connect = async () => {
 			await client.connectUser(
@@ -26,8 +26,7 @@ export default function ChatProvider({ children }: PropsWithChildren) {
 					name: profile.full_name,
 					image: supabase.storage.from('avatars').getPublicUrl(profile.avatar_url).data.publicUrl,
 				},
-				//tokenProvider
-				client.devToken(profile.id)
+				tokenProvider
 			);
 			setIsReady(true);
 		};
