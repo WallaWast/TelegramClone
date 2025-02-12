@@ -1,12 +1,12 @@
 import { CallContent, StreamCall, useStreamVideoClient } from '@stream-io/video-react-native-sdk';
-
-const callId = 'my-call-id';
+import { useLocalSearchParams } from 'expo-router';
 
 export default function CallScreen() {
+	const { id } = useLocalSearchParams<{ id: string }>();
 	const client = useStreamVideoClient();
 	if (!client) return null;
 
-	const call = client.call('default', callId);
+	const call = client.call('default', id);
 	call.join({ create: true });
 
 	return (

@@ -52,7 +52,7 @@ export default function ChannelScreen() {
 
 		const call = videoClient.call('default', Crypto.randomUUID());
 		await call.getOrCreate({ ring: true, data: { members } });
-		//router.push(`/call`);
+		router.push(`/call/${call.id}`);
 	};
 
 	if (!channel) {
