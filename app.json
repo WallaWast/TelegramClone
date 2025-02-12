@@ -47,6 +47,7 @@
 		},
 		"plugins": [
 			"expo-router",
+			//["@notifee/react-native"],
 			[
 				"expo-media-library",
 				{
@@ -66,8 +67,8 @@
 					"android": {
 						"minSdkVersion": 24,
 						"compileSdkVersion": 35,
-						"targetSdkVersion": 35,
-						"extraMavenRepos": ["../../node_modules/@notifee/react-native/android/libs"]
+						"targetSdkVersion": 35
+						//"extraMavenRepos": ["../../node_modules/@notifee/react-native/android/libs"]
 					}
 				}
 			],
