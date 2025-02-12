@@ -1,9 +1,8 @@
 import React from 'react';
 import { ChannelList } from 'stream-chat-expo';
-import { Link, Redirect, router, Stack } from 'expo-router';
+import { Link, router, Stack } from 'expo-router';
 import { useAuth } from '../../../providers/AuthProvider';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
-import { Text } from 'react-native';
 
 export default function MainTab() {
 	const { user } = useAuth();
@@ -14,7 +13,6 @@ export default function MainTab() {
 
 	return (
 		<>
-			<Redirect href={'/(home)/call'} />
 			<Stack.Screen
 				options={{
 					headerRight: () => (
