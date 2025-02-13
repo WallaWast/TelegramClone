@@ -48,11 +48,12 @@ export default function ChannelScreen() {
 
 		// console.log(JSON.stringify(channel?.state.members, null, 2));
 		const members = Object.values(channel?.state.members || {}).map((member: any) => ({ user_id: member.user_id }));
-		// console.log(JSON.stringify(members, null, 2));
+		console.log(JSON.stringify(members, null, 2));
 
 		const call = videoClient.call('default', Crypto.randomUUID());
 		await call.getOrCreate({ ring: true, data: { members } });
-		router.push(`/call/${call.id}`);
+		//await call.join();
+		//router.push(`/call`);
 	};
 
 	if (!channel) {
